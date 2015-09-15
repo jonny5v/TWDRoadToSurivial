@@ -37,7 +37,6 @@ $(function() {
         initComplete: function() {
 			this.api().columns().every(function() {
 				var column = this;
-				console.log(column.index());
 				if (column.index() === 1) {
 					createSelect(column);
 				} else if (column.index() === 2) {
@@ -50,7 +49,7 @@ $(function() {
     });
     
     function createSelect(column) {
-    	var select = $('<select><option value=""></option></select>')
+    	var select = $('<select class="form-control"><option value=""></option></select>')
             .appendTo( $(column.header()).empty() )
             .on('change', function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
@@ -60,6 +59,5 @@ $(function() {
         column.data().unique().sort().each( function ( d, j ) {
             select.append( '<option value="'+d+'">'+d+'</option>' )
         });
-        console.log(select);
     };
 });
