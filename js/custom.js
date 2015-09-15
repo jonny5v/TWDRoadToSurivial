@@ -6,7 +6,7 @@ $(function() {
         	url: url,
             dataSrc: "feed.entry"
         },
-        dom: ftipr,
+        dom: "ftipr",
         columns:[
             {
                 title: "Character",
