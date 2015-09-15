@@ -37,7 +37,7 @@ $(function() {
         initComplete: function() {
 			this.api().columns().every(function() {
 				var column = this;
-				
+				console.log(column.index());
 				if (column.index() === 1) {
 					createSelect(column);
 				} else if (column.index() === 2) {
