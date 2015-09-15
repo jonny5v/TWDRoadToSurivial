@@ -49,7 +49,7 @@ $(function() {
     });
     
     function createSelect(column) {
-    	var select = $('<select class="form-control"><option value=""></option></select>')
+    	var select = $('<select class="form-control"><option value="">' + $(column.header()).text() + '</option></select>')
             .appendTo( $(column.header()).empty() )
             .on('change', function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
