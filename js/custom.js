@@ -51,7 +51,7 @@ $(function() {
     
     function createSelect(column) {
     	var select = $('<select><option value=""></option></select>')
-            .appendTo( $(column.footer()).empty() )
+            .appendTo( $(column.header()).empty() )
             .on('change', function () {
                 var val = $.fn.dataTable.util.escapeRegex($(this).val());
                 column.search( val ? '^'+val+'$' : '', true, false ).draw();
