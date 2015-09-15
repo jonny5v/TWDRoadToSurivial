@@ -8,32 +8,62 @@ $(function() {
         },
         columns:[
             {
-                "title": "Character",
-                "data": "gsx$charactername.$t"
+                title: "Character",
+                data: "gsx$charactername.$t"
             },
             {
-                "title": "Star",
-                "data": "gsx$stars.$t"
+                title: "Star",
+                data: "gsx$stars.$t"
             },
             {
-                "title": "Trait",
-                "data": "gsx$trait.$t"
+                title: "Trait",
+                data: "gsx$trait.$t"
             },
             {
-                "title": "Persona",
-                "data": "gsx$persona.$t"
+                title: "Persona",
+                data: "gsx$persona.$t"
             },
             {
-                "title": "Rush",
-                "data": "gsx$rush.$t"
+                title: "Rush",
+                data: "gsx$rush.$t"
             },
             {
-                "title": "Leader Skill",
-                "data": "gsx$leaderskill.$t"
+                title: "Leader Skill",
+                data: "gsx$leaderskill.$t"
             }
-                
         ],
         responsive: true,
-        order: [1, "desc"]
+        order: [1, "desc"],
+        initComplete: function() {
+			this.api().columns().every(function() {
+				var column = this;
+				
+				if (column.index() === 1) {
+					createSelect(column);
+				} else if (column.index() === 2) {
+					createSelect(column);
+				} else if (column.index() === 3) {
+					createSelect(column);
+				}
+			});
+        }
     });
+    
+    function createSelect(column) {
+    	var select = $('<select><option value=""></option></select>')
+            .appendTo( $(column.footer()).empty() )
+            .on( 'change', function () {
+                var val = $.fn.dataTable.util.escapeRegex(
+                    $(this).val()
+                );
+
+                column
+                    .search( val ? '^'+val+'$' : '', true, false )
+                    .draw();
+            });
+
+        column.data().unique().sort().each( function ( d, j ) {
+            select.append( '<option value="'+d+'">'+d+'</option>' )
+        });
+    };
 });
