@@ -6,6 +6,7 @@ $(function() {
         	url: url,
             dataSrc: "feed.entry"
         },
+        dom: ftipr,
         columns:[
             {
                 title: "Character",
@@ -32,6 +33,12 @@ $(function() {
                 data: "gsx$leaderskill.$t"
             }
         ],
+        columnDefs: [
+       		{
+       			targets: [1,2,3],
+       			orderable: false
+       		}
+       	],
         responsive: true,
         order: [1, "desc"],
         initComplete: function() {
