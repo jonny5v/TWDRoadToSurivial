@@ -97,7 +97,7 @@ $("#tblWeapons").DataTable({
         ],
         columnDefs: [
             {
-                targets: [1,2,3],
+                targets: [1,2],
                 orderable: false
             }
         ],
