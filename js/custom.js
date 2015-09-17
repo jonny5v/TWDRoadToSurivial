@@ -73,11 +73,22 @@ $("#tblWeapons").DataTable({
             },
             {
                 title: "Stars",
-                data: "gsx$stars.$t"
+                data: "gsx$stars.$t",
+                render: function(data, type, full, meta) {
+                    var _stars = "<span style='display:none;'>" + data + "</span>";
+                    for (var i = parseInt(data); i > 0; i-- ) {
+                        _stars += "<i class='glyphicon glyphicon-star'></i>";
+                    }
+                    return _stars;
+                }
             },
             {
                 title: "Trait",
-                data: "gsx$trait.$t"
+                data: "gsx$trait.$t",
+                render: function(data, type, full, meta) {
+                    var _trait = "<span style='display:none;'>" + data + "</span><img src='images/traits/" + data + ".png' width='40' style='display: block; margin: auto;'/>";
+                    return _trait;
+                }
             },
             {
                 title: "Stats",
@@ -95,7 +106,7 @@ $("#tblWeapons").DataTable({
         initComplete: function() {
             this.api().columns().every(function() {
                 var column = this;
-                if (column.index() === 1 || column.index() === 2 || column.index() === 3) {
+                if (column.index() === 1 || column.index() === 2) {
                     createSelect(column);
                 }
             });
