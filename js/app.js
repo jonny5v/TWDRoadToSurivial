@@ -1,13 +1,11 @@
 angular.module("twdApp",["ngRoute"])
-.controller("Controller", function($scope, $route, $routeParams, $location) {
+.controller("Controller", function($scope, $route, $routeParams, $location, $rootScope) {
 	$scope.$route = $route;
     $scope.$location = $location;
-    $scope.$routeParams = $routeParams;
-    $scope.index = "index.html";
 
 	$scope.menu= [
-		{ title: "Characters", url: "characters", glyphicon: "user" },
-		{ title: "Weapons", url: "weapons", glyphicon: "wrench" }
+		{ title: "Characters", url: "/characters", glyphicon: "user" },
+		{ title: "Weapons", url: "/weapons", glyphicon: "wrench" }
 	];
 })
 .config(function($routeProvider, $locationProvider) {
@@ -22,9 +20,8 @@ angular.module("twdApp",["ngRoute"])
     	contoller: "viewController",
 	    active: "weapons"
 	})
-	.otherwise({
-		redirectTo: "/characters"
-	});
+	.otherwise("/characters");
+
 
 	$locationProvider.html5Mode(false);
 })
