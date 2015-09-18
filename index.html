@@ -3,15 +3,21 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>TWD: Road To Survival</title>
+		<base href=" ">
 		<link rel="stylesheet" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.9,r-1.0.7/datatables.min.css">
 		<link rel="stylesheet" href="css/custom.css">
 		<link rel="shortcut icon" href="images/favicon.ico">
-		<base href="">
 	</head>
 	<body style="font-family:'Edosz';" ng-controller="Controller">
-		<div nav-bar></div>
-		<div class="jumbotron"></div>
+	<pre>
+		location: {{$location.path()}}
+		absUrl: {{$location.absUrl()}}
+		url: {{$location.url()}}
+		host: {{$location.host()}}
+	</pre>
 		<div class="container">
+			<div class="jumbotron"></div>
+			<div nav-bar></div>
 		    <div class="row">
 		    	<div ng-view></div>     
 		    </div>
