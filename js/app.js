@@ -1,14 +1,11 @@
 angular.module("twdApp",["ngRoute"])
-.controller("Controller", function($scope, $route, $routeParams, $location, $rootScope) {
+.controller("Controller", function($scope, $route, $routeParams, $location, $http) {
 	$scope.$route = $route;
     $scope.$location = $location;
 
-	$scope.menu= [
-		{ title: "Characters", url: "#/characters", glyphicon: "user" },
-		{ title: "Weapons", url: "#/weapons", glyphicon: "wrench" },
-		{ title: "Reddit", url: "https://www.reddit.com/r/TWDRoadToSurvival/", glyphicon: "new-window", target: "_blank" },
-		{ title: "Official Forum", url: "http://forum.scopely.com/forumdisplay.php?12-The-Walking-Dead-Road-to-Survival", glyphicon: "new-window", target: "_blank" }
-	];
+    $http.get("https://spreadsheets.google.com/feeds/list/1zMDOJlHQLf5z2JVbmsckdIlBRHBKCEG1B0AcKSnk0ZE/1/public/values?alt=json").success(function(data) {
+    	$scope.menu = data.feed.entry;
+    });
 })
 .config(function($routeProvider, $locationProvider) {
 	$routeProvider
