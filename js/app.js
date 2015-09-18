@@ -6,8 +6,8 @@ angular.module("twdApp",["ngRoute"])
     $scope.index = "index.html";
 
 	$scope.menu= [
-		{ title: "Characters", url: "/characters", glyphicon: "user" },
-		{ title: "Weapons", url: "/weapons", glyphicon: "wrench" }
+		{ title: "Characters", url: "#/characters", glyphicon: "user" },
+		{ title: "Weapons", url: "#/weapons", glyphicon: "wrench" }
 	];
 })
 .config(function($routeProvider) {
