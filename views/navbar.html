@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-<nav class="navbar navbar-default navbar-fixed-top">
-	<div class="container">
-=======
 <nav class="navbar navbar-default .navbar-fixed-top">
 	<div class="container-fluid">
->>>>>>> gh-pages
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -20,11 +15,7 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li ng-repeat="item in menu" ng-class="{ active: $route.current.active === item.url }">
-<<<<<<< HEAD
-					<a ui-sref="{{item.url}}"><i class="glyphicon glyphicon-{{item.glyphicon}}"></i> {{item.title}}</a>
-=======
-					<a href="#/{{item.url}}"><i class="glyphicon glyphicon-{{item.glyphicon}}"></i> {{item.title}}</a>
->>>>>>> gh-pages
+					<a href="/{{item.url}}"><i class="glyphicon glyphicon-{{item.glyphicon}}"></i> {{item.title}}</a>
 				</li>
 		</div>
 		<!-- /.navbar-collapse -->
