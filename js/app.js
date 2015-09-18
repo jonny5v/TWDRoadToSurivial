@@ -19,11 +19,20 @@ angular.module("twdApp",["ngRoute"])
 	    	contoller: "viewController",
 		    active: "weapons"
 		})
+		.when("/comingsoon", {
+			templateUrl: "views/comingsoon.html",
+			controller: "viewController",
+			active: "comingsoon"
+		})
+		.when("/404error", {
+			templateUrl: "views/404error.html",
+			controller: "viewController"
+		})
 		.when("/", {
 			templateUrl: "views/home.html",
 			controller: "viewController"
 		})
-		.otherwise("/");
+		.otherwise("/404error");
 
 
 		$locationProvider.html5Mode(false);
