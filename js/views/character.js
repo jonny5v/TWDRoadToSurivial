@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	$("#tblCharacter").DataTable({
 	    ajax: {
-	    	url: "https://spreadsheets.google.com/feeds/list/1zMDOJlHQLf5z2JVbmsckdIlBRHBKCEG1B0AcKSnk0ZE/1/public/values?alt=json",
+	    	url: "https://spreadsheets.google.com/feeds/list/1zMDOJlHQLf5z2JVbmsckdIlBRHBKCEG1B0AcKSnk0ZE/2/public/values?alt=json",
 	        dataSrc: "feed.entry"
 	    },
 	    dom: "ftipr",
