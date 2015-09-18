@@ -6,21 +6,28 @@ angular.module("twdApp",["ngRoute"])
     $scope.index = "index.html";
 
 	$scope.menu= [
-		{ title: "Characters", url: "#/characters", glyphicon: "user" },
-		{ title: "Weapons", url: "#/weapons", glyphicon: "wrench" }
+		{ title: "Characters", url: "characters", glyphicon: "user" },
+		{ title: "Weapons", url: "weapons", glyphicon: "wrench" }
 	];
 })
 .config(function($routeProvider) {
   $routeProvider
 	.when("/characters", {
-	    templateUrl: "views/characters.html"
+	    templateUrl: "views/characters.html",
+	    contoller: "viewController",
+	    active: "characters"
 	})
 	.when("/weapons", {
-    	templateUrl: "views/weapons.html"
+    	templateUrl: "views/weapons.html",
+    	contoller: "viewController",
+	    active: "weapons"
 	})
 	.otherwise({
 		redirectTo: "/characters"
 	});
+})
+.controller("viewController", function($scope, $route) {
+	$scope.$route = $route;
 })
 .directive("navBar", function() {
 	return {
