@@ -39,6 +39,7 @@ $("#tblWeapons").DataTable({
             orderable: false
         }
     ],
+    deferRender: true,
     responsive: true,
     order: [1, "desc"],
     initComplete: function() {

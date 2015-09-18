@@ -48,6 +48,7 @@ $(document).ready(function() {
 	   			orderable: false
 	   		}
 	   	],
+	   	deferRender: true,
 	    responsive: true,
 	    order: [1, "desc"],
 	    initComplete: function() {
