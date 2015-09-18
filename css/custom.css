@@ -1,0 +1,16 @@
+@font-face {
+	font-family: Edosz;
+	src: url('../fonts/edosz.ttf');
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: Edosz;
+}
+
+.brand {
+	width: 25px;
+}
+.jumbotron {
+	height: 500px;
+	background: url('http://www.flickeringmyth.com/wp-content/uploads/2015/08/the-walking-dead-road-to-survival.jpg') no-repeat center;
+}
