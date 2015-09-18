@@ -19,7 +19,11 @@ angular.module("twdApp",["ngRoute"])
 	    	contoller: "viewController",
 		    active: "weapons"
 		})
-		.otherwise("/characters");
+		.when("/", {
+			templateUrl: "views/home.html",
+			controller: "viewController"
+		})
+		.otherwise("/");
 
 
 		$locationProvider.html5Mode(false);
