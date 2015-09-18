@@ -12,5 +12,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 .jumbotron {
 	height: 500px;
-	background: url('http://www.flickeringmyth.com/wp-content/uploads/2015/08/the-walking-dead-road-to-survival.jpg') no-repeat center;
+	background: url('../images/banner.jpg') no-repeat center;
+}
+.tab-pane {
+	margin-top: 25px;
+}
+body {
+	padding-top: 70px;
 }

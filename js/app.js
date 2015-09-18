@@ -6,11 +6,11 @@ angular.module("twdApp",["ngRoute"])
     $scope.index = "index.html";
 
 	$scope.menu= [
-		{ title: "Characters", url: "characters", glyphicon: "user" },
-		{ title: "Weapons", url: "weapons", glyphicon: "wrench" }
+		{ title: "Characters", url: "/characters", glyphicon: "user" },
+		{ title: "Weapons", url: "/weapons", glyphicon: "wrench" }
 	];
 })
-.config(function($routeProvider) {
+.config(function($routeProvider, $locationProvider) {
   $routeProvider
 	.when("/characters", {
 	    templateUrl: "views/characters.html",
@@ -25,6 +25,8 @@ angular.module("twdApp",["ngRoute"])
 	.otherwise({
 		redirectTo: "/characters"
 	});
+
+	$locationProvider.html5Mode(true);
 })
 .controller("viewController", function($scope, $route) {
 	$scope.$route = $route;
