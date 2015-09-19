@@ -1,15 +1,6 @@
 <ul class="list-group">
-	<a href="#" class="list-group-item disabled">
-    	Owner / Creator
- 	</a>
-	<li class="list-group-item" ng-repeat="contributor in contributors | filter: isOwner">
-		<a href="{{contributor.gsx$url.$t}}{{contributor.gsx$user.$t}}" target="_blank">{{contributor.gsx$user.$t}}</a>
-	</li>
-	<a href="#" class="list-group-item disabled">
-    	Reddit
- 	</a>
-	<li class="list-group-item" ng-repeat="contributor in contributors | filter: isReddit">
-		<span class="badge">{{contributor.gsx$contribute.$t}}</span>
+	<li class="list-group-item" ng-repeat="contributor in contributors">
+		<span class="badge">{{contributor.gsx$type.$t}}</span>
 		<a href="{{contributor.gsx$url.$t}}{{contributor.gsx$user.$t}}" target="_blank">{{contributor.gsx$user.$t}}</a>
 	</li>
 </ul>
