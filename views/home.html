@@ -5,7 +5,7 @@
 <div id="content">
 	<div id="download">
 		<ul class="nav nav-pills nav-justified">
-			<li ng-repeat="item in menu" role="presentation" style="padding: 10px;">
+			<li ng-repeat="item in menu | filter:notOther" role="presentation" style="padding: 10px;">
 				<a href="{{item.gsx$url.$t}}" target="{{item.gsx$target.$t}}"><i class="glyphicon glyphicon-{{item.gsx$glyphicon.$t}}"></i> {{item.gsx$title.$t}}</a>
 			</li>
 		</ul>

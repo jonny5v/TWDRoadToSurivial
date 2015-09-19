@@ -2,11 +2,9 @@
 	font-family: Edosz;
 	src: url('../fonts/edosz.ttf');
 }
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: Edosz;
 }
-
 .brand {
 	width: 25px;
 }
@@ -15,7 +13,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 body {
 	padding: 70px;
+	/*
 	background: url("../images/roadtosurvival_bg.jpg");
+	*/
+	background: url("../images/Comics_walkers2_background.jpg");
 	background-position: bottom center;
     background-size: 100% auto;
     background-color: #0B0B0B;

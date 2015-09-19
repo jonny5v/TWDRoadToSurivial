@@ -12,6 +12,14 @@ angular.module("twdApp",["ngRoute"])
     .success(function(data) {
     	$scope.contributors = data.feed.entry;
     });
+
+    $scope.notOther = function(source) {
+		return (source.gsx$target.$t !== '_blank') ? true : false;
+	};
+
+	$scope.isOther = function(source) {
+		return (source.gsx$target.$t === '_blank') ? true : false;
+	};
 })
 .config(function($routeProvider, $locationProvider) {
 	$routeProvider
@@ -50,25 +58,23 @@ angular.module("twdApp",["ngRoute"])
 })
 .controller("viewController", function($scope, $route) {
 	$scope.$route = $route;
-
-	$scope.isReddit = function(source) {
-		return (source.gsx$type.$t === 'reddit') ? true : false;
-	};
-
-	$scope.isOwner = function(source) {
-		return (source.gsx$type.$t === 'owner') ? true : false;
-	};
 })
 .directive("navbarTop", function() {
 	return {
 		restrict: "A",
 		templateUrl: "views/navbarTop.html"
-	}
+	};
+})
+.directive("navbarBottom", function() {
+	return {
+		restrict: "A",
+		templateUrl: "views/navbarBottom.html"
+	};
 })
 .directive("characterJs", function() {
 	return {
 		restrict: "E",
 		templateUrl: "js/character.js"
-	}
+	};
 })
 ;
