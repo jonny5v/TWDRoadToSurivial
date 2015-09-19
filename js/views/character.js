@@ -7,7 +7,7 @@ $(document).ready(function() {
 	    dom: "ftipr",
 	    columns:[
 	        {
-	            title: "Character",
+	            title: "Name",
 	            data: "gsx$charactername.$t"
 	        },
 	        {
@@ -34,7 +34,7 @@ $(document).ready(function() {
 	            data: "gsx$persona.$t"
 	        },
 	        {
-	            title: "Rush",
+	            title: "Adrenaline Rush Skill",
 	            data: "gsx$rush.$t"
 	        },
 	        {

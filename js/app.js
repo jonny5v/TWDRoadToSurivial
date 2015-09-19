@@ -59,10 +59,10 @@ angular.module("twdApp",["ngRoute"])
 		return (source.gsx$type.$t === 'owner') ? true : false;
 	};
 })
-.directive("navBar", function() {
+.directive("navbarTop", function() {
 	return {
 		restrict: "A",
-		templateUrl: "views/navbar.html"
+		templateUrl: "views/navbarTop.html"
 	}
 })
 .directive("characterJs", function() {

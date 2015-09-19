@@ -6,7 +6,7 @@ $("#tblWeapons").DataTable({
     dom: "ftipr",
     columns:[
         {
-            title: "Weapons",
+            title: "Name",
             data: "gsx$weaponname.$t"
         },
         {
