@@ -3,8 +3,14 @@ angular.module("twdApp",["ngRoute"])
 	$scope.$route = $route;
     $scope.$location = $location;
 
-    $http.get("https://spreadsheets.google.com/feeds/list/1zMDOJlHQLf5z2JVbmsckdIlBRHBKCEG1B0AcKSnk0ZE/1/public/values?alt=json").success(function(data) {
+    $http.get("https://spreadsheets.google.com/feeds/list/1zMDOJlHQLf5z2JVbmsckdIlBRHBKCEG1B0AcKSnk0ZE/1/public/values?alt=json")
+    .success(function(data) {
     	$scope.menu = data.feed.entry;
+    });
+
+    $http.get("https://spreadsheets.google.com/feeds/list/1zMDOJlHQLf5z2JVbmsckdIlBRHBKCEG1B0AcKSnk0ZE/4/public/values?alt=json")
+    .success(function(data) {
+    	$scope.contributors = data.feed.entry;
     });
 })
 .config(function($routeProvider, $locationProvider) {
@@ -24,6 +30,11 @@ angular.module("twdApp",["ngRoute"])
 			controller: "viewController",
 			active: "comingsoon"
 		})
+		.when("/contributions", {
+			templateUrl: "views/contributions.html",
+			controller: "viewController",
+			active: "contributions"
+		})
 		.when("/404error", {
 			templateUrl: "views/404error.html",
 			controller: "viewController"
@@ -39,6 +50,14 @@ angular.module("twdApp",["ngRoute"])
 })
 .controller("viewController", function($scope, $route) {
 	$scope.$route = $route;
+
+	$scope.isReddit = function(source) {
+		return (source.gsx$type.$t === 'reddit') ? true : false;
+	};
+
+	$scope.isOwner = function(source) {
+		return (source.gsx$type.$t === 'owner') ? true : false;
+	};
 })
 .directive("navBar", function() {
 	return {
