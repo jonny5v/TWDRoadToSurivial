@@ -1,6 +1,13 @@
-<div class="jumbotron"></div>
-<ul class="nav nav-pills nav-justified">
-	<li ng-repeat="item in menu" role="presentation" style="padding: 10px;">
-		<a href="{{item.gsx$url.$t}}" target="{{item.gsx$target.$t}}"><i class="glyphicon glyphicon-{{item.gsx$glyphicon.$t}}"></i> {{item.gsx$title.$t}}</a>
-	</li>
-</ul>
+<div id="header-bg" class="relative">
+	<div id="header-logo" class="absolute"></div>
+	<div id="header-hero" class="absolute"></div>
+<div>
+<div id="content">
+	<div id="download">
+		<ul class="nav nav-pills nav-justified">
+			<li ng-repeat="item in menu" role="presentation" style="padding: 10px;">
+				<a href="{{item.gsx$url.$t}}" target="{{item.gsx$target.$t}}"><i class="glyphicon glyphicon-{{item.gsx$glyphicon.$t}}"></i> {{item.gsx$title.$t}}</a>
+			</li>
+		</ul>
+	</div>
+</div>
