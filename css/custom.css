@@ -82,7 +82,7 @@ body {
     width: 100%;
     height: auto;
     padding-top: 7%;
-    background-image: url("../images/header/download-blood-fade.png"), url("../images/header/download-bg-new.png");
+    background-image: url("../images/header/download-blood-new.png"), url("../images/header/download-bg-new.png");
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
