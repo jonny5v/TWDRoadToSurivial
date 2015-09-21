@@ -6,7 +6,7 @@ $("#tblWeapons").DataTable({
     dom: "ftipr",
     columns:[
         {
-            title: "Weapons",
+            title: "Name",
             data: "gsx$weaponname.$t"
         },
         {
@@ -39,6 +39,7 @@ $("#tblWeapons").DataTable({
             orderable: false
         }
     ],
+    deferRender: true,
     responsive: true,
     order: [1, "desc"],
     initComplete: function() {

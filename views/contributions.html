@@ -1,0 +1,11 @@
+<div class="panel panel-danger">
+	<div class="panel-heading">
+		<h1 class="panel-title">Contributions</h1>
+	</div>
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="contributor in contributors">
+			<span class="badge">{{contributor.gsx$type.$t}}</span>
+			<a href="{{contributor.gsx$url.$t}}{{contributor.gsx$user.$t}}" target="_blank">{{contributor.gsx$user.$t}}</a>
+		</li>
+	</ul>
+</div>

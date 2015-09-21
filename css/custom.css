@@ -2,21 +2,108 @@
 	font-family: Edosz;
 	src: url('../fonts/edosz.ttf');
 }
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: Edosz;
 }
-
 .brand {
 	width: 25px;
-}
-.jumbotron {
-	height: 500px;
-	background: url('../images/banner.jpg') no-repeat center;
 }
 .tab-pane {
 	margin-top: 25px;
 }
 body {
-	padding-top: 70px;
+	padding: 70px;
+	/*
+	background: url("../images/roadtosurvival_bg.jpg");
+	*/
+	background: url("../images/Comics_walkers2_background.jpg");
+	background-position: bottom center;
+    background-size: 100% auto;
+    background-color: #0B0B0B;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.error-template {
+	padding: 40px 15px;text-align: center;
+}
+.error-actions {
+	margin-top:15px;margin-bottom:15px;
+}
+.error-actions .btn {
+	margin-right:10px;
+}
+.panel-title {
+	font-size: 24px;
+}
+.nav.nav-right {
+	float: right;
+	display: inline-block;
+}
+#header-bg {
+	top: 50px;
+	height: 500px;
+	background: url('../images/header/red-bg-tile.jpg') no-repeat center;
+}
+#header-logo {
+    width: 56%;
+    height: 100%;
+    background-image: url("../images/header/header-logo.png");
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: 0;
+    max-height: 486px;
+    max-width: 770px;
+}
+#header-hero {
+    width: 60%;
+    height: 100%;
+    background-image: url("../images/header/header-hero1.png");
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    -webkit-background-size: 100% auto;
+    -moz-background-size: 100% auto;
+    background-size: 100% auto;
+    background-position: right top;
+    background-repeat: no-repeat;
+    right: 0;
+    max-height: 486px;
+    max-width: 835px;
+}
+#content {
+	top: 400px;
+    position: relative;
+    z-index: 5;
+}
+#download {
+    width: 100%;
+    height: auto;
+    padding-top: 7%;
+    background-image: url("../images/header/download-blood-fade.png"), url("../images/header/download-bg-new.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    background-repeat: no-repeat, repeat-x;
+    background-position: right -65px, right top;
+    margin-top: -6%;
+}
+#download a img {
+    margin: 0 20px;
+    height: 100%;
+    max-height: 40px;
+}
+.absolute {
+	position: absolute;
+}
+.relative {
+	position: relative;
+}
+.center {
+	display: block;
+	margin: auto;
 }
