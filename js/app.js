@@ -3,18 +3,24 @@ angular.module("twdApp",["ngRoute"])
 	$scope.$route = $route;
     $scope.$location = $location;
 
+    // links
     $http.get("https://spreadsheets.google.com/feeds/list/1zMDOJlHQLf5z2JVbmsckdIlBRHBKCEG1B0AcKSnk0ZE/1/public/values?alt=json")
     .success(function(data) {
     	$scope.menu = data.feed.entry;
     });
 
+    // contributions
     $http.get("https://spreadsheets.google.com/feeds/list/1zMDOJlHQLf5z2JVbmsckdIlBRHBKCEG1B0AcKSnk0ZE/4/public/values?alt=json")
     .success(function(data) {
     	$scope.contributors = data.feed.entry;
     });
 
     $scope.notOther = function(source) {
-		return (source.gsx$target.$t !== '_blank') ? true : false;
+		return (source.gsx$target.$t !== '_blank' && source.gsx$title.$t !== 'Home') ? true : false;
+	};
+
+	$scope.isHome = function(source) {
+		return (source.gsx$title.$t === 'Home') ? true : false;
 	};
 
 	$scope.isOther = function(source) {
@@ -54,7 +60,7 @@ angular.module("twdApp",["ngRoute"])
 		.otherwise("/404error");
 
 
-		$locationProvider.html5Mode(false);
+		$locationProvider.html5Mode(true);
 })
 .controller("viewController", function($scope, $route) {
 	$scope.$route = $route;
