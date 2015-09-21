@@ -20,7 +20,7 @@ angular.module("twdApp",["ngRoute"])
 	$scope.isOther = function(source) {
 		return (source.gsx$target.$t === '_blank') ? true : false;
 	};
-})
+}) 
 .config(function($routeProvider, $locationProvider) {
 	$routeProvider
 		.when("/characters", {
