@@ -54,7 +54,7 @@ angular.module("twdApp",["ngRoute"])
 		.otherwise("/404error");
 
 
-		$locationProvider.html5Mode(false);
+		$locationProvider.html5Mode(true);
 })
 .controller("viewController", function($scope, $route) {
 	$scope.$route = $route;
