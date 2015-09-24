@@ -3,6 +3,15 @@ angular.module("twdApp",["ngRoute"])
 	$scope.$route = $route;
     $scope.$location = $location;
 
+    $scope.trait = [
+    	{
+    		alert: alert,
+    		tough: tough,
+    		strong: strong,
+    		fast: fast
+    	}
+    ];
+
     // links
     $http.get("https://spreadsheets.google.com/feeds/list/1zMDOJlHQLf5z2JVbmsckdIlBRHBKCEG1B0AcKSnk0ZE/1/public/values?alt=json")
     .success(function(data) {

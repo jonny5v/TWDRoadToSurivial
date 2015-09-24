@@ -1,4 +1,9 @@
 // global javascript functions
+var alert = 0,
+	tough = 0,
+	strong = 0,
+	fast = 0;
+
 function createSelect(column) {
 	var select = $('<select class="form-control"><option value="">' + $(column.header()).text() + '</option></select>')
         .appendTo( $(column.header()).empty() )
